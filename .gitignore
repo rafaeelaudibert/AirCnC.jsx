@@ -1,0 +1,37 @@
+# Using **/_ we can ignore files from all the folders under this directory
+
+**/node_modules
+**/.env
+
+# Mobile ignores
+mobile/node_modules/**/*
+mobile/.expo/*
+mobile/.expo-shared/*
+mobile/npm-debug.*
+mobile/*.jks
+mobile/*.p8
+mobile/*.p12
+mobile/*.key
+mobile/*.mobileprovision
+mobile/*.orig.*
+mobile/web-build/
+mobile/web-report/
+mobile/*.log
+
+# Front-end ignore
+frontend//node_modules
+frontend/.pnp
+frontend/.pnp.js
+frontend/coverage
+frontend/build
+frontend/.DS_Store
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Backend ignores
+backend/uploads
