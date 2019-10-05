@@ -4,15 +4,18 @@ const cors = require("cors");
 const routes = require("./routes");
 const path = require("path");
 
+// Dotenv configuration
+require("dotenv").config();
+
+// App configuration
 const app = express();
 
-mongoose.connect(
-  "mongodb+srv://backend:0qbzH6dCEiGyFe3v@aircnc-a0d5i.mongodb.net/aircnc?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-  }
-);
+// MongoDB configuration
+const connection_string = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@aircnc-a0d5i.mongodb.net/${process.env.MONGODB_DATABASE}?retryWrites=true&w=majority`;
+mongoose.connect(connection_string, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 app.use(cors());
 app.use(express.json());
